@@ -1,16 +1,5 @@
 # WorldGuard Events
 
-## This project is abandoned.
-It has still been tested to work on every version from 1.15 to 1.20.5, and will probably work for the forseeable future, but no update or fix will be made.
-
-You are very welcome to fork it, or to take over the repo if you are serious enough.
-
-## For server admins
-
-This plugin may be required by some other plugins. If so, simply drop the JAR in the **plugins** folder of your server, reload it, and you're set.
-
-  It doesn't do anything on its own and is useless unless required by another plugin.
-
 ## For developers
 ### Events
 This API provides you with the following events :
@@ -21,12 +10,6 @@ This API provides you with the following events :
    - **RegionEnteredEvent**
    - **RegionLeftEvent**
 
-All of those are fired upon each player movement into a new set of regions, in that order.
-
-They are all pretty self-explainatory. You can use any event interchangeably : the events returning a single ProtectedRegion are fired at the same time as the events returning a Set of ProtectedRegions (which is useful if you have multiple overlapping/neighbouring regions).
-
-Cancelling any of the events will prevent the movement from happening.
-
 ### API
 On top of events, and since version 1.15.2 of this plugin, we now provide you with a small API to get the most basic informations out of WorldGuard :
 
@@ -36,11 +19,7 @@ On top of events, and since version 1.15.2 of this plugin, we now provide you wi
    - **isPlayerInAnyRegion**
    - **isPlayerInAllRegions**
 
-All of those use the UUID of the player to fetch information about him from WorldGuard.
-
-***Be aware that those region names are case insensitive, just like WorldGuard, and that they are checked for the world the player is currently in.***
-## Usage example
-
+Example:
 ```java
 import net.raidstone.wgevents.WorldGuardEvents;
 import net.raidstone.wgevents.events.RegionEnteredEvent;
